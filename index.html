@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    
+    <h1>Web App</h1>
+    
+    <label>Name</label><input type="text" id="name">
+    <label>City</label><input type="text" id="city">
+    <label>Profession</label><input type="text" id="profession">
+    <label>Age In Years</label><input type="number" id="age">
+    <button id="button">Submit</button>
+    
+    <script>
+    
+    document.getElementById("button").addEventListener("click", userEntries);
+    
+    function userEntries(){
+     let name = document.getElementById("name").value;
+     let city = document.getElementById("city").value;
+     let profession = document.getElementById("profession").value;
+     let age = document.getElementById("age").value;
+     
+     google.script.run.entriesMade(name, city, profession, age);
+     document.getElementById("name").value = "";
+     document.getElementById("city").value = "";
+     document.getElementById("profession").value = "";
+     document.getElementById("age").value = "";
+    
+    }
+    </script>
+        
+  </body>
+</html>
